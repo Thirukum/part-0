@@ -1,0 +1,20 @@
+Part-1
+--------
+title Browser-server activity Diagram
+
+browser->server: HTTP GET https://example/part1/notes
+server-->browser: HTML-code
+browser->server: HTTP GET https://example/part1/main.css
+server-->browser: main.css
+browser->server: HTTP GET https://example/part1/main.js
+note over browser:
+browser starts executing js-code
+that requests JSON data from server 
+end note
+browser->server: HTTP GET https://example/part1/data.json
+server-->browser: [{ content: "HTML is easy", date: "2021-05-15" }, ...]
+
+note over browser:
+browser executes the event handler
+that renders notes to display
+end note
